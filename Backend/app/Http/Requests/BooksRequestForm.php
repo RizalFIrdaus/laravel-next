@@ -22,9 +22,9 @@ class BooksRequestForm extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required",
-            "description" => "required",
-            "price" => "required|numeric"
+            "name" => "required|min:4",
+            "description" => "required|min:12",
+            "price" => "required"
         ];
     }
 
@@ -34,7 +34,6 @@ class BooksRequestForm extends FormRequest
             "name.required" => "Nama buku harus diisi.",
             "description.required" => "Deskripsi buku harus diisi.",
             "price.required" => "Harga buku harus diisi.",
-            "price.numeric" => "Harga buku harus berupa angka.",
         ];
     }
 }
